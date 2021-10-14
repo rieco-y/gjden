@@ -1,24 +1,28 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| last_name          | string | null: false               |
+| first_name         | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
 
-* Ruby version
+- has_many: reservation
 
-* System dependencies
+## reservations テーブル
 
-* Configuration
+| Column        | Type    | Options                        |
+| ------------- | ------- | ------------------------------ |
+| date          | date    | null: false                    |
+| start_time    | time    | null: false                    |
+| end_time      | time    | null: false                    |
+| group_name    | string  | null: false                    |
+| manager       | string  | null: false                    |
+| phone_number  | string  | null: false                    |
+| people_number | integer | null: false                    |
+| room_id       | integer | null: false                    |
+| use           | string  | null: false                    |
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- belogs_to: user
