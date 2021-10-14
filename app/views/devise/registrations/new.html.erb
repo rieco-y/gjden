@@ -3,16 +3,17 @@
     <div class='account-page__inner--left account-page__header'>
     </div>
 
-  <div class='account-page__inner--right user-form'>
+    <div class='account-page__inner--right user-form'>
       <div class='sign-up-title'>
-      <h2>社 員 登 録</h2>
+        <h2>社 員 登 録</h2>
       </div>
     <div class='full-input-field'>
+      <%= link_to "ログイン画面へ戻る", new_user_session_path, class: "btn" %>
       <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true do |f|%>
         <%= devise_error_messages!%>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :苗字 %>
+            <%= f.label :last_name %>
           </div>
           <div class='field-input'>
             <%= f.text_field :last_name, autofocus: true%>
@@ -20,7 +21,7 @@
         </div>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :名前%>
+            <%= f.label :first_name%>
           </div>
           <div class='field-input'>
             <%= f.text_field :first_name, autofocus: true%>
@@ -28,7 +29,7 @@
         </div>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :メールアドレス%>
+            <%= f.label :email%>
           </div>
           <div class='field-input'>
             <%= f.email_field :email%>
@@ -36,7 +37,7 @@
         </div>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :パスワード%>
+            <%= f.label :password%>
             <i>(英数字6文字以上)</i>
           </div>
           <div class='field-input'>
@@ -45,7 +46,7 @@
         </div>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :パスワード確認用%>
+            <%= f.label :password_confirmation%>
           </div>
           <div class='field-input'>
             <%= f.password_field :password_confirmation, autocomplete: "off"%>
@@ -56,8 +57,8 @@
           <%= f.submit "登  録", class: 'btn'%>
           </div>
         </div>
-      </div>
       <% end %>
+    </div>
     </div>
   </div>
 </div>
