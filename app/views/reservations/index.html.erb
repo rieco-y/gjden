@@ -1,0 +1,26 @@
+<h1>Reservations#index</h1>
+<p>Find me in app/views/reservations/index.html.erb</p>
+  <div class="header-name">
+    <a href="#">木村</a>
+    <%#= current_user.last_name %>
+  </div>
+  <div class="create-room">
+    <a href="#">新規予約</a>
+  </div>
+
+  <div class="left-header">
+    <div class="header-title">
+      １０月１日
+    </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
+      <%= link_to "新規登録", new_user_registration_path, class: "btn" %>
+
+
+      <%= link_to "ログイン", new_user_session_path, class: "btn" %>
+
+
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn" %>
+    </div>
+  </div>
