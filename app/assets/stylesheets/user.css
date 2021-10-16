@@ -9,7 +9,7 @@
   padding-top: 30px;
 }
 .account-page .account-page__inner {
-  width: 800px;
+  width: 700px;
   margin: 60px auto;
   padding: 60px;
   background-color: #fff;
@@ -17,19 +17,11 @@
   border-radius: 5px;
 }
 .account-page__inner--left {
-  display: block;
-  text-align: center;
 }
 .account-page__inner--right{
-  width: 60%;
-padding-left: 150px;
+  width: 90%;
+}
 
-}
-.account-page .account-page__inner:after {
-  clear: both;
-  content: "";
-  display: block;
-}
 .account-page .account-page__header h2 {
   margin-bottom: 10px;
   font-size: 40px;
@@ -126,5 +118,4 @@ padding-left: 150px;
   font-size: 13px;
 }
 .botton{
- padding-left: 200px;
 }
