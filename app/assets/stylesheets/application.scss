@@ -14,6 +14,23 @@
  *= require_self
  */
  
- * {
-  box-sizing: border-box;
+
+
+@import "bootstrap/scss/bootstrap";
+
+.mw-md {
+  max-width: 576px;
+}
+
+.mw-xl {
+  max-width: 1200px;
+}
+
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
 }

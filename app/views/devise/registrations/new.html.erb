@@ -10,10 +10,10 @@
     <div class='full-input-field'>
       <%= link_to "ログイン画面へ戻る", new_user_session_path, class: "btn" %>
       <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true do |f|%>
-        <%= devise_error_messages!%>
+        <%= bootstrap_devise_error_messages! %>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :last_name %>
+            <%= f.label :last_name, '苗字'%>
           </div>
           <div class='field-input'>
             <%= f.text_field :last_name, autofocus: true%>
@@ -21,7 +21,7 @@
         </div>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :first_name%>
+            <%= f.label :first_name, '名前' %>
           </div>
           <div class='field-input'>
             <%= f.text_field :first_name, autofocus: true%>
