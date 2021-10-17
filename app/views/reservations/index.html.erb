@@ -59,7 +59,7 @@
       </div>
 
       <div>
-        <% @reservations.each do |reservation| %>
+        <% @new_reservations.each do |reservation| %>
           <div>
             <span class="col-1"><%= link_to reservation.group_name, reservation %></span>
             <span class="col-2"><%= reservation.day.strftime("%Y年%m月%d日") %><%#= link_to "詳細", blog_path(reservation)%></span>
@@ -74,12 +74,15 @@
       <%= month_calendar events: @reservations do |date, reservations| %>
         <%= date.day %>
 
-        <% reservations.each do |reservation| %>
+        <% @reservations.each do |reservation| %>
           <div>
-            <%= link_to reservation.group_name, reservation %>
-            <%#= link_to reservation.day, oneday_blog_path(reservation) %>
+            <% if date == reservation.day %>
+              <%= link_to reservation.group_name, reservation %>
+            <% end %>
           </div>
         <% end %>
       <% end %>
     </div>
   </div>
+
+<%#= link_to reservation.day, oneday_blog_path(reservation) %>
