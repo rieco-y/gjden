@@ -74,13 +74,15 @@
       <%= month_calendar events: @reservations do |date, reservations| %>
         <%= date.day %>
 
-        <% reservations.each do |reservation| %>
+        <% @reservations.each do |reservation| %>
           <div>
-            <%= "テスト" %>
-            <%#= link_to reservation.group_name, reservation %>
-            <%#= link_to reservation.day, oneday_blog_path(reservation) %>
+            <% if date == reservation.day %>
+              <%= link_to reservation.group_name, reservation %>
+            <% end %>
           </div>
         <% end %>
       <% end %>
     </div>
   </div>
+
+<%#= link_to reservation.day, oneday_blog_path(reservation) %>
