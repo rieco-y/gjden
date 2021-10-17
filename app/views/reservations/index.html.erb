@@ -1,5 +1,4 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+
 <%= render 'layouts/flash_messages' %>
 
 
@@ -26,5 +25,61 @@
 
 
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn" %>
+    </div>
+  </div>
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+        <div class="heading">
+           こんにちは、
+            <a href="/">りえこ</a>さん
+        </div>
+        <div class="navbar">
+            <ul class="nav-lists">
+                <li><%= link_to '新規予約', new_reservation_path %></li>
+                <li><a href="#">メニュー２</a></li>
+                <li><a href="#">メニュー３</a></li>
+                <li><a href="#">メニュー４</a></li>
+            </ul>
+       </div>
+        <div class="editbar">
+          <div class ="editbtn">
+            <a href="#">出口</a>
+          </div>
+        </div>
+    </header>
+  <div class ="zentai">
+    <p id="notice"><%= notice %></p>
+
+    <div class='table-style'>
+      <div>
+          <span class="col-1">最新予約</span>
+          <span class="col-2">日時</span>
+      </div>
+
+      <div>
+        <% @reservations.each do |reservation| %>
+          <div>
+            <span class="col-1"><%= link_to reservation.group_name, reservation %></span>
+            <span class="col-2"><%= reservation.day.strftime("%Y年%m月%d日") %><%#= link_to "詳細", blog_path(reservation)%></span>
+            <span class="col-3"><%= reservation.time.strftime("%H:%M〜") %><%#= link_to "詳細", blog_path(reservation)%></span>
+        <% end %>
+      </div>
+    </div>
+
+    <br>
+
+    <div class='calender-table-style'>
+      <%= month_calendar events: @reservations do |date, reservations| %>
+        <%= date.day %>
+
+        <% reservations.each do |reservation| %>
+          <div>
+            <%= link_to reservation.group_name, reservation %>
+            <%#= link_to reservation.day, oneday_blog_path(reservation) %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
