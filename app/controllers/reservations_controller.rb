@@ -2,6 +2,7 @@ class ReservationsController < ApplicationController
   
   def index
     @reservations = Reservation.all
+    @new_reservations = Reservation.order(updated_at: :desc).limit(3)
   end
 
   def new
