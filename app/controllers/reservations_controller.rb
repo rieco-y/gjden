@@ -9,8 +9,11 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
   end
 
+  def show
+    @reservation = Reservation.find(params[:id])
+  end
+
   def create
-    binding.pry
     @reservation = Reservation.new(reservation_parameter)
     @day = @reservation.day.strftime("%Y/%m/%d")
     @time = @reservation.time.strftime("%H:%M")

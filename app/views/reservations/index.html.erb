@@ -1,54 +1,11 @@
-
-<%= render 'layouts/flash_messages' %>
-
-
-
-  <div class="header-name">
-    <a href="#">木村</a>
-    <%#= current_user.last_name %>
-  </div>
-  <div class="create-room">
-    <a href="#">新規予約</a>
-  </div>
-
-  <div class="left-header">
-    <div class="header-title">
-      １０月１日
-    </div>
-  </div>
-  <div class="right-header">
-    <div class="header-button">
-      <%= link_to "新規登録", new_user_registration_path, class: "btn" %>
-
-
-      <%= link_to "ログイン", new_user_session_path, class: "btn" %>
-
-
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn" %>
-    </div>
-  </div>
 <!DOCTYPE html>
 <html>
-  <body>
-    <header>
-        <div class="heading">
-           こんにちは、
-            <a href="/">りえこ</a>さん
-        </div>
-        <div class="navbar">
-            <ul class="nav-lists">
-                <li><%= link_to '新規予約', new_reservation_path %></li>
-                <li><a href="#">メニュー２</a></li>
-                <li><a href="#">メニュー３</a></li>
-                <li><a href="#">メニュー４</a></li>
-            </ul>
-       </div>
-        <div class="editbar">
-          <div class ="editbtn">
-            <a href="#">出口</a>
-          </div>
-        </div>
-    </header>
+    <div class="top-heading">
+      <span><%= link_to "#{current_user.last_name}さん", edit_user_registration_path, class: 'nav-link'%></span>
+      <span>今日もよろしくお願いします！</span>
+    </div>
+
+<%= render "/layouts/header" %>
   <div class ="zentai">
     <p id="notice"><%= notice %></p>
 
@@ -64,6 +21,7 @@
             <span class="col-1"><%= link_to reservation.group_name, reservation %></span>
             <span class="col-2"><%= reservation.day.strftime("%Y年%m月%d日") %><%#= link_to "詳細", blog_path(reservation)%></span>
             <span class="col-3"><%= reservation.time.strftime("%H:%M〜") %><%#= link_to "詳細", blog_path(reservation)%></span>
+          </div>
         <% end %>
       </div>
     </div>
