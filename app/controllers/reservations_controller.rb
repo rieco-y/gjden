@@ -18,8 +18,11 @@ class ReservationsController < ApplicationController
     @day = @reservation.day.strftime("%Y/%m/%d")
     @time = @reservation.time.strftime("%H:%M")
     @reservation.start_time = Time.zone.parse(@day + " " + @time)
-    @reservation.save
-    redirect_to root_path
+    if @reservation.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
