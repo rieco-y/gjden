@@ -15,7 +15,7 @@
 
 | Column        | Type    | Options                        |
 | ------------- | ------- | ------------------------------ |
-| date          | date    | null: false                    |
+| day           | date    | null: false                    |
 | start_time    | time    | null: false                    |
 | end_time      | time    | null: false                    |
 | group_name    | string  | null: false                    |
