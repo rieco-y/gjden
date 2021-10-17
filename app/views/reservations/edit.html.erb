@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 text-center title">
-      <h1>新規予約画面</h1>
+      <h1>予約編集画面</h1>
     </div>
     <div class="col-12 mt-3 content">
     <%= form_with model: @reservation, local: true, class: 'form' do |form| %>
@@ -26,7 +26,7 @@
         <%= form.label :time, '開始時間' %>
       </div>
       <div class='input-date-wrap'>
-        <%= form.time_select(:time, {class:'select-date', id:"start-time", prompt:'--', time_separator: ':'}, ignore_data: true) %>
+        <%= form.time_select(:time, {class:'select-date', id:"start-time",  prompt:'--', time_separator: ':'}, ignore_data: true) %>
       </div>
       <div class="time form-group">
         <%= form.label :end_time, '終了時間' %>
@@ -68,11 +68,11 @@
 
       <%= form.hidden_field :start_time %>
       <div class="submit">
-        <%= form.submit value: '予約する', class: 'btn btn-primary mx-auto d-block' %>
+        <%= form.submit value: '変更を確定する', class: 'btn btn-primary mx-auto d-block' %>
       </div>
     <% end %>
     <div class="col-12 text-right">
-      <%= link_to '戻る', reservations_path %>
+      <%= link_to '戻る', root_path %>
     </div>
     </div>
   </div>
