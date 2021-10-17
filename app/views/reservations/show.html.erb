@@ -1,0 +1,35 @@
+  <%= render "/layouts/header" %>
+ 
+  <div class="show-contents">
+      <div class="show-title">
+        <h1>詳細ページ</h1>
+      </div>
+
+      <div class="group_name_show">
+        <strong>団体名</strong>
+        <%= @reservation.group_name %>
+      </div>
+
+      <div class="people_number_show">
+        <strong>人数</strong>
+        <%= @reservation.people_number %>
+      </div>
+
+      <div class="room_show">
+        <strong>会場</strong>
+        <%= @reservation.room.name %>
+      </div>
+
+      <div class="use_show">
+        <strong>用途</strong>
+        <%= @reservation.use %>
+      </div>
+
+      <div class="manager_show">
+        <strong>担当者</strong>
+        <%= @reservation.manager %>  <%=@reservation.phone_number%>
+      </div>
+
+
+
+  </div>
