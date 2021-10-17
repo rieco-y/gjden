@@ -14,7 +14,6 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    binding.pry
     @reservation = Reservation.new(reservation_parameter)
     @day = @reservation.day.strftime("%Y/%m/%d")
     @time = @reservation.time.strftime("%H:%M")
