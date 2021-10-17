@@ -26,7 +26,13 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
-  def updated
+  def update
+    @reservation = Reservation.find(params[:id])
+    if @reservation.update(reservation_parameter)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
