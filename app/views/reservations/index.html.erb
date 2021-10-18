@@ -1,46 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <div class="top-heading">
-      <span><%= link_to "#{current_user.last_name}さん", edit_user_registration_path, class: 'nav-link'%></span>
-      <span>今日もよろしくお願いします！</span>
-    </div>
-
-<%= render "/layouts/header" %>
-  <div class ="zentai">
-    <p id="notice"><%= notice %></p>
-
-    <div class='table-style'>
-      <div>
-          <span class="col-1">最新予約</span>
-          <span class="col-2">日時</span>
+  <body>
+      <div class="top-heading">
+        <%= image_tag "logo.png", class:"top-logo-pict" %>
+        <span><%#= link_to "#{current_user.last_name}さん", edit_user_registration_path, class: 'nav-link'%></span>
+        <%#<span>今日もよろしくお願いします！</span>%>
       </div>
 
-      <div>
-        <% @new_reservations.each do |reservation| %>
-          <div>
-            <span class="col-1"><%= link_to reservation.group_name, reservation %></span>
-            <span class="col-2"><%= reservation.day.strftime("%Y年%m月%d日") %><%#= link_to "詳細", blog_path(reservation)%></span>
-            <span class="col-3"><%= reservation.time.strftime("%H:%M〜") %><%#= link_to "詳細", blog_path(reservation)%></span>
-          </div>
-        <% end %>
-      </div>
-    </div>
+    <%= render "/layouts/header" %>
+    <div class ="zentai">
+      <p id="notice"><%= notice %></p>
 
-    <br>
-
-    <div class='calender-table-style'>
-      <%= month_calendar events: @reservations do |date, reservations| %>
-        <%= date.day %>
-
-        <% @reservations.each do |reservation| %>
-          <div>
-            <% if date == reservation.day %>
-              <%= link_to reservation.group_name, reservation %>
+      <div class='table-style'>
+          <span>＼  新規予約入っています ご確認ください ! ／</span>
+          <div class="box17">
+            <% @new_reservations.each do |reservation| %>
+              <div class="new-reserv-text">
+                <span class="col-1"><%= link_to reservation.group_name, reservation %></span>
+                <span class="col-2"><%= reservation.day.strftime("%Y年%m月%d日") %><%#= link_to "詳細", blog_path(reservation)%></span>
+                <span class="col-3"><%= reservation.time.strftime("%H:%M〜") %><%#= link_to "詳細", blog_path(reservation)%></span>
+              </div>
             <% end %>
           </div>
+      </div>
+
+      <br>
+
+      <div class='calender-table-style'>
+        <%= month_calendar events: @reservations do |date, reservations| %>
+          <%= date.day %>
+
+          <% @reservations.each do |reservation| %>
+            <div>
+              <% if date == reservation.day %>
+                <%= link_to reservation.group_name, reservation %>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
+  </body>
+
+
+  <div class="table-scroll">
+    <table >
+      <caption>会場使用状況</caption>
+        <tr>
+          <th rowspan="2">　　　</th><th rowspan="2">百合の間</th><th>秋桜の間</th><th>桜の間</th>
+        </tr>
+        <tr>
+          <th colspan="2">山茶花の間</th>
+        </tr>
+          <th>9:00</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
+        </tr>
+        <tr>
+          <th>9:30</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
+        </tr>
+        <tr>
+          <th>10:00</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
+        </tr>
+        <tr>
+          <th>10:30</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
+        </tr>
+        <tr>
+          <th>11:00</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
+        </tr>
+        <tr>
+          <th>11:30</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
+        </tr>
+        <tr>
+          <th>12:00</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
+        </tr>
+    </table>
+  </div>
   </div>
 
-<%#= link_to reservation.day, oneday_blog_path(reservation) %>

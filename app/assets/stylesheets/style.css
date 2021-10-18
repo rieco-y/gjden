@@ -1,44 +1,49 @@
+/* リセットCSS */
+
 * {
   box-sizing: border-box;
 }
 body {
+  background-color: #f5f5f3;
   margin: 0;
   padding: 0;
   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.top-logo-pict{
+  width: 100px;
+  height: 100px;
+}
+
+body,
+html {
+  height: 100%;
+  background-color: #f5f5f3 !important;
+}
+
+
 header {
-  background-color: rgb(194, 199, 197);
-  padding: 10px 0;
+  background-color: rgb(145, 151, 149);
+  padding: 20px 0;
   display: flex;
 }
 .top-heading{
   text-align: center;
 }
 .navbar {
-  width: 50%;
-  padding: 10px;
+  width: 100%;
+  padding: auto 10px;
   background-color: rgb(154, 156, 155);
-}
-.nav-lists {
-  display: flex;
   justify-content: space-around;
+  padding-right: 2rem;
 }
 
-.editbar{
-  width: 20%;
-  background-color: gray;
-  padding: 25px 0 0 60px;
-}
 
 
 li {
   list-style: none;
 }
 
-.zentai{
-  overflow: scroll;
-}
 
 .calendar-heading{
   text-align: center;
@@ -49,17 +54,152 @@ li {
   display: inline-block;
   width: 200px;
   margin-top: 5px;
+  white-space: nowrap;
 }
 
 .col-2{
   display: inline-block;
-  width: 150px;
+  width: 100px;
   margin-top: 5px;
 }
 
 .table-style{
+  text-align: center;
+  font-size: 20px;
 }
 
 .calender-table-style{
   padding: 0 60px 100px 60px;
 }
+
+footer {
+  margin: 30px auto;
+  padding: 10px;
+  color: #D8D8D8;
+}
+
+footer p {
+  text-align: center;
+}
+
+.new-reserv-text{
+text-align: center;
+}
+
+.box17{
+  margin: 10px 0;
+  position: relative;
+  padding: 0.5em 1.5em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+.box17:before, .box17:after{
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: -webkit-calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: black;
+}
+.box17:before {left: 10px;}
+.box17:after {right: 10px;}
+.box17 p {
+  margin: 0; 
+  padding: 0;
+}
+
+.box24 {
+  position: relative;
+  padding: 0.5em 0.7em;
+  margin: 2em 0;
+  background: gray;
+  color: black;
+  font-weight: bold;
+}
+.box24:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid gray;
+  width: 0;
+  height: 0;
+}
+.box24 p {
+  margin: 0; 
+  padding: 0;
+}
+
+
+
+/*.table-scroll{
+  overflow-x : auto
+}
+
+table{
+  width: 100%;
+  border: 1px solid; /* 線の太さと可視化 */
+/*  border-top-left-radius: 8px; /* 左上を角丸に */
+/*}
+
+table th{
+  width: 10%;
+  padding : 20px;
+  border: 1px solid;
+  background-color: antiquewhite;
+}
+
+table td{
+  width: 30%;
+  padding : 20px;
+  border: 1px solid;
+  background-color: bisque;
+}
+
+/* タブエリアのdivへの適用 */
+/*#smallArea {
+  /* 基本的なサイズの設定 */
+  /*background-color: #bbedce;
+  width: 80px;
+  height: 26px;
+  padding-top: 4px;
+ 
+  /* borderに関する設定 */
+  /*border: 1px solid; /* 線の太さと可視化 */
+  /*border-bottom: transparent; /* 下辺を透明に */
+  /*border-top-left-radius: 8px; /* 左上を角丸に */
+  /*border-top-right-radius: 8px; /* 右上を角丸に */
+ 
+  /* メイン表示エリアの線の太さだけ下にずらす */
+  /*margin-bottom: -1px;
+ 
+  /* その他の設定 */
+  /*position: relative;
+  text-align: center;
+}
+
+/* メイン表示エリアのdivへの適用 */
+/*#largeArea {
+  /* 基本的なサイズの設定 */
+  /*background-color: #fff;
+  width: 200px;
+  height: 40px;
+  padding: 20px;
+ 
+  /* 枠線を太さ1pxで表示 */
+  /*border: 1px solid;
+}
+
+/* コンテンツを見やすく表示 */
+/*.disp-area {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#sakurabox {
+  border:1px dashed gray;   /* 枠線 */
+  /*border-radius:1em;        /* 角丸 */
+  /*background-color:#ccffcc; /* 背景色 */
+/*}

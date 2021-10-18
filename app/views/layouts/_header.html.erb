@@ -1,15 +1,8 @@
-<header>
-        <div class="navbar">
-            <ul class="nav-lists">
+    <header>
+          <ul class="navbar">
                 <li><a href="#">トップページ</a></li>
-                <li><%= link_to '新規予約', new_reservation_path %></li>
-                <li><a href="#">メニュー３</a></li>
-                <li><a href="#">メニュー４</a></li>
-            </ul>
-        </div>
-        <div class="editbar">
-          <div class ="editbtn">
-            <a href="#">出口</a>
-          </div>
-        </div>
-</header>
+                <li><%= link_to '新 規 予 約', new_reservation_path %></li>
+                <li><a href="#">シ フ ト表</a></li>
+                <li><%= link_to 'ログアウト', destroy_user_session_path %></li>
+          </ul>
+    </header>
