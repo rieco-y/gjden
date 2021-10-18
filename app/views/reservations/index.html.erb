@@ -12,7 +12,7 @@
       <p id="notice"><%= notice %></p>
 
       <div class='table-style'>
-          <span>＼  新規予約入っています ご確認ください ! ／</span>
+          <span class="new-reserv-voyce">＼  新規予約入っています ご確認ください ! ／</span>
           <div class="box17">
             <% @new_reservations.each do |reservation| %>
               <div class="new-reserv-text">
@@ -43,36 +43,17 @@
   </body>
 
 
+  <caption>本日の会場使用状況</caption>
   <div class="table-scroll">
-    <table >
-      <caption>会場使用状況</caption>
+    <table class="down-table" >
         <tr>
-          <th rowspan="2">　　　</th><th rowspan="2">百合の間</th><th>秋桜の間</th><th>桜の間</th>
+          <th>会場</th><th>時間</th><th>団体名</th><th>用途</th>
         </tr>
-        <tr>
-          <th colspan="2">山茶花の間</th>
-        </tr>
-          <th>9:00</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
-        </tr>
-        <tr>
-          <th>9:30</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
-        </tr>
-        <tr>
-          <th>10:00</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
-        </tr>
-        <tr>
-          <th>10:30</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
-        </tr>
-        <tr>
-          <th>11:00</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
-        </tr>
-        <tr>
-          <th>11:30</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
-        </tr>
-        <tr>
-          <th>12:00</th><td>　　　　</td><td>　　　　</td><td>　　　　</td>
-        </tr>
-    </table>
+        <% @reservation.each do |reservation| %>
+          <tr>
+            <th><%= reservation.room.name %></th><td><%= reservation.time.strftime("%H:%M〜") %></td><td><%= reservation.group_name %></td><td><%= reservation.use %></td>
+          </tr>
+        <% end %>
+      </table>
   </div>
-  </div>
-
+</html>
