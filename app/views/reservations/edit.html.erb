@@ -75,7 +75,7 @@
       <%= link_to '戻る', root_path %>
     </div>
 
-    <%= link_to "削除する", reservation_path, method: :delete %>
+    <%= link_to "削除する", reservation_path, method: :delete, data: {confirm: "⚠️本当に削除しますか？"} %>
 
 
     </div>
