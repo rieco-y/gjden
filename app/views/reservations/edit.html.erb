@@ -1,83 +1,88 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 text-center title">
-      <h1>予約編集画面</h1>
-    </div>
-    <div class="col-12 mt-3 content">
-    <%= form_with model: @reservation, local: true, class: 'form' do |form| %>
-      <%= render 'layouts/error_messages', model: form.object %>
-      <div class="day form-group">
-        <%= form.label :day, '日付' %>
-        <div class='input-day-wrap'>
-           <%= raw sprintf(
-                     form.date_select(
-                        :day,
-                        class:'select-day',
-                        id:"select-day",
-                        use_month_numbers: true,
-                        prompt:'--',
-                        start_year: 2021,
-                        end_year: (Time.now.year + 3),
-                        date_separator: '%s'),
-                      " 年 ", " 月 ") + " 日 "%>
+    
+  <div class="top-heading">
+    <%= image_tag "logo白.png", class:"top-logo-pict" %>
+  </div>
+    <%= render "/layouts/header" %>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center title">
+          <h1>予約編集画面</h1>
+        </div>
+        <div class="col-12 mt-3 content">
+        <%= form_with model: @reservation, local: true, class: 'form' do |form| %>
+          <%= render 'layouts/error_messages', model: form.object %>
+          <div class="day form-group">
+            <%= form.label :day, '日付' %>
+            <div class='input-day-wrap'>
+              <%= raw sprintf(
+                        form.date_select(
+                            :day,
+                            class:'select-day',
+                            id:"select-day",
+                            use_month_numbers: true,
+                            prompt:'--',
+                            start_year: 2021,
+                            end_year: (Time.now.year + 3),
+                            date_separator: '%s'),
+                          " 年 ", " 月 ") + " 日 "%>
+            </div>
+          </div>
+          <div class="time form-group">
+            <%= form.label :time, '開始時間' %>
+          </div>
+          <div class='input-date-wrap'>
+            <%= form.time_select(:time, {class:'select-date', id:"start-time",  prompt:'--', time_separator: ':'}, ignore_data: true) %>
+          </div>
+          <div class="time form-group">
+            <%= form.label :end_time, '終了時間' %>
+          </div>
+          <div class='input-date-wrap'>
+            <%= form.time_select(:end_time, {class:'select-date', id:"end-time", prompt:'--', time_separator: ':'}, ignore_data: true) %>
+          </div>
+
+          <div class="group form-group">
+            <%= form.label :group_name, '団体名' %>
+            <%= form.text_field :group_name, class: 'form-control' %>
+          </div>
+
+          <div class="manager form-group">
+            <%= form.label :manager, '担当者名' %>
+            <%= form.text_field :manager, class: 'form-control' %>
+          </div>
+
+          <div class="phone_number form-group">
+            <%= form.label :phone_number, '電話番号' %>
+            <%= form.text_field :phone_number, class: 'form-control' %>
+          </div>
+
+          <div class="people_number form-group">
+            <%= form.label :people_number, '人数' %>
+            <%= form.text_field :people_number, class: 'form-control' %>
+          </div>
+
+          <div class="room form-group">
+            <%= form.label :room_id, '会場' %>
+            <%= form.collection_select(:room_id, Room.all, :id, :name, {}, {class:"room-select"}) %>
+          </div>
+
+          <div class="use form-group">
+            <%= form.label :use, '用途' %>
+            <%= form.text_field :use, class: 'form-control' %>
+          </div>
+
+
+          <%= form.hidden_field :start_time %>
+          <div class="submit">
+            <%= form.submit value: '変更を確定する', class: 'btn btn-primary mx-auto d-block' %>
+          </div>
+        <% end %>
+        <div class="col-12 text-right">
+          <%= link_to '戻る', root_path %>
+        </div>
+
+        <%= link_to "削除する", reservation_path, method: :delete, data: {confirm: "⚠️本当に削除しますか？"} %>
+
+
         </div>
       </div>
-      <div class="time form-group">
-        <%= form.label :time, '開始時間' %>
-      </div>
-      <div class='input-date-wrap'>
-        <%= form.time_select(:time, {class:'select-date', id:"start-time",  prompt:'--', time_separator: ':'}, ignore_data: true) %>
-      </div>
-      <div class="time form-group">
-        <%= form.label :end_time, '終了時間' %>
-      </div>
-      <div class='input-date-wrap'>
-        <%= form.time_select(:end_time, {class:'select-date', id:"end-time", prompt:'--', time_separator: ':'}, ignore_data: true) %>
-      </div>
-
-      <div class="group form-group">
-        <%= form.label :group_name, '団体名' %>
-        <%= form.text_field :group_name, class: 'form-control' %>
-      </div>
-
-      <div class="manager form-group">
-        <%= form.label :manager, '担当者名' %>
-        <%= form.text_field :manager, class: 'form-control' %>
-      </div>
-
-      <div class="phone_number form-group">
-        <%= form.label :phone_number, '電話番号' %>
-        <%= form.text_field :phone_number, class: 'form-control' %>
-      </div>
-
-      <div class="people_number form-group">
-        <%= form.label :people_number, '人数' %>
-        <%= form.text_field :people_number, class: 'form-control' %>
-      </div>
-
-      <div class="room form-group">
-        <%= form.label :room_id, '会場' %>
-        <%= form.collection_select(:room_id, Room.all, :id, :name, {}, {class:"room-select"}) %>
-      </div>
-
-      <div class="use form-group">
-        <%= form.label :use, '用途' %>
-        <%= form.text_field :use, class: 'form-control' %>
-      </div>
-
-
-      <%= form.hidden_field :start_time %>
-      <div class="submit">
-        <%= form.submit value: '変更を確定する', class: 'btn btn-primary mx-auto d-block' %>
-      </div>
-    <% end %>
-    <div class="col-12 text-right">
-      <%= link_to '戻る', root_path %>
     </div>
-
-    <%= link_to "削除する", reservation_path, method: :delete, data: {confirm: "⚠️本当に削除しますか？"} %>
-
-
-    </div>
-  </div>
-</div>
