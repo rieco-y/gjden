@@ -72,17 +72,15 @@
 
 
           <%= form.hidden_field :start_time %>
-          <div class="submit">
-            <%= form.submit value: '変更を確定する', class: 'btn btn-primary mx-auto d-block' %>
-          </div>
+          <button type="button" class="btn btn-primary">
+            <%= form.submit value: '変更を確定する', class: 'btn btn btn-primary' %>
+          </button>
         <% end %>
         <div class="col-12 text-right">
-          <%= link_to '戻る', root_path %>
+          <button type="button" class="btn btn-outline-danger">
+            <%= link_to "削除する", reservation_path, method: :delete, class: 'btn', data: {confirm: "⚠️本当に削除しますか？"} %>
+          </button>
         </div>
-
-        <%= link_to "削除する", reservation_path, method: :delete, data: {confirm: "⚠️本当に削除しますか？"} %>
-
-
         </div>
       </div>
     </div>

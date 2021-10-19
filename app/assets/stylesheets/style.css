@@ -164,3 +164,32 @@ text-align: center;
   border: 1px dotted;
   background-color: rgb(245, 242, 239);
 }
+
+.detail-btn{
+  padding-top: 30px;
+  text-align: center;
+}
+
+.detail-table {
+  width: 50%;
+  margin: auto;
+}
+
+.detail-reservation{
+    width: 20%;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    text-align: center;
+}
+
+.detail-value {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.delete-btn{
+  color: black;
+}
