@@ -3,35 +3,36 @@
   </div>
   <%= render "/layouts/header" %>
   <div class="show-contents">
-      <div class="show-title">
-        <h1>詳細ページ</h1>
+      <table class="detail-table">
+        <tr>
+          <th class="detail-reservation">団体名</th>
+          <td class="detail-value"><%= @reservation.group_name %></td>
+        </tr>
+        <tr>
+          <th class="detail-reservation">人数</th>
+          <td class="detail-value"><%= @reservation.people_number %></td>
+        </tr>
+        <tr>
+          <th class="detail-reservation">会場</th>
+          <td class="detail-value"><%= @reservation.room.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-reservation">用途</th>
+          <td class="detail-value"><%= @reservation.use %></td>
+        </tr>
+        <tr>
+          <th class="detail-reservation">担当者</th>
+          <td class="detail-value"><%= @reservation.manager %></td>
+        </tr>
+        <tr>
+          <th class="detail-reservation">電話番号</th>
+          <td class="detail-value"><%=@reservation.phone_number%></td>
+        </tr>
+      </table>
+      <div class="detail-btn">
+        <button type="button" class="btn btn-outline-secondary">
+          <%= link_to "編集する", edit_reservation_path(@reservation), class: 'btn' %>
+        </button>
       </div>
-
-      <div class="group_name_show">
-        <strong>団体名</strong>
-        <%= @reservation.group_name %>
-      </div>
-
-      <div class="people_number_show">
-        <strong>人数</strong>
-        <%= @reservation.people_number %>
-      </div>
-
-      <div class="room_show">
-        <strong>会場</strong>
-        <%= @reservation.room.name %>
-      </div>
-
-      <div class="use_show">
-        <strong>用途</strong>
-        <%= @reservation.use %>
-      </div>
-
-      <div class="manager_show">
-        <strong>担当者</strong>
-        <%= @reservation.manager %>  <%=@reservation.phone_number%>
-      </div>
-
-  <%= link_to "編集する", edit_reservation_path(@reservation) %>
-
   </div>
+
