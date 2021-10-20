@@ -1,32 +1,45 @@
+  <div class="top-heading">
+    <%= image_tag "logo白.png", class:"top-logo-pict" %>
+  </div>
+<%= render "/layouts/header" %>
+    <div class="col-12 text-center title">
+      <h1><%= @datetime %></h1>
+    </div>
 
+    <br>
 
-  <%= @date %>
+  
 
-    
+    <div class="col-12 text-center title">
+      <h1>昼の部</h1>
+    </div>
     <table class="day-table" >
             <tr>
-              <th>会場</th><th>時間</th><th>団体名</th><th>用途</th>
+              <th>会場</th><th>団体名</th><th>時間</th><th>用途</th>
             </tr>
           <% @reservations.each do |reservation| %>
             <% if reservation.time <= "13:59" %>
               <tr>
-                <th><%= reservation.room.name %></th><td><%= reservation.time.strftime("%H:%M〜") %></td><td><%= reservation.group_name %></td><td><%= reservation.use %></td>
+                <th><%= reservation.room.name %></th><td><%= link_to reservation.group_name, reservation %></td><td><%= reservation.time.strftime("%H:%M〜") %></td><td><%= reservation.use %></td>
               </tr>
             <% end %>
           <% end %>
    </table>
 
-     <br>
-          <br>
+    <br>
+    <br>
 
+    <div class="col-12 text-center title">
+      <h1>夜の部</h1>
+    </div>
     <table class="day-table" >
               <tr>
-                <th>会場</th><th>時間</th><th>団体名</th><th>用途</th>
+                <th>会場</th><th>団体名</th><th>時間</th><th>用途</th>
               </tr>
           <% @reservations.each do |reservation| %>
             <% if reservation.time >= "14:00"%>
                 <tr>
-                  <th><%= reservation.room.name %></th><td><%= reservation.time.strftime("%H:%M〜") %></td><td><%= reservation.group_name %></td><td><%= reservation.use %></td>
+                  <th><%= reservation.room.name %></th><td><%= reservation.group_name %></td><td><%= reservation.time.strftime("%H:%M〜") %></td><td><%= reservation.use %></td>
                 </tr>
             <% end %>
           <% end %>
