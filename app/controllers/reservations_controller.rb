@@ -46,7 +46,9 @@ class ReservationsController < ApplicationController
   end
 
   def oneday
-    @date = params[:id]
+    date = params[:id]
+    @date = date.to_date
+    @datetime = @date.strftime("%m月%d日")
     @reservations = Reservation.where(day: params[:id])
   end
 
