@@ -26,7 +26,7 @@
       <div class='calender-table-style'>
         <%= month_calendar events: @reservations do |date, reservations| %>
           <div class="text text03">
-              <%= link_to daytimes_path, class: "navbar-item" do %>
+              <%= link_to oneday_reservation_path(date), class: "navbar-item" do %>
                   <%= date.day %>
 
                 <% @reservations.each do |reservation| %>

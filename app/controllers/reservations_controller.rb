@@ -45,6 +45,9 @@ class ReservationsController < ApplicationController
     redirect_to root_path
   end
 
+  def oneday
+    @reservations = Reservation.where(day: params[:id])
+  end
 
   private
 
