@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_20_034025) do
-
-  create_table "daytimes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "reservation_id"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["reservation_id"], name: "index_daytimes_on_reservation_id"
-    t.index ["user_id"], name: "index_daytimes_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2021_10_16_143129) do
 
   create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "day", null: false
@@ -51,6 +42,4 @@ ActiveRecord::Schema.define(version: 2021_10_20_034025) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "daytimes", "reservations"
-  add_foreign_key "daytimes", "users"
 end
