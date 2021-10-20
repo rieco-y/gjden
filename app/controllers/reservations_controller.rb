@@ -46,6 +46,7 @@ class ReservationsController < ApplicationController
   end
 
   def oneday
+    @date = params[:id]
     @reservations = Reservation.where(day: params[:id])
   end
 
