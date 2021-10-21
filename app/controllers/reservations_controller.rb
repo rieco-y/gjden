@@ -16,9 +16,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_parameter)
-    @day = @reservation.day.strftime("%Y/%m/%d")
-    @time = @reservation.time.strftime("%H:%M")
-    @reservation.start_time = Time.zone.parse(@day + " " + @time)
+    start_time_set
     if @reservation.save
       redirect_to root_path
     else
@@ -45,11 +43,29 @@ class ReservationsController < ApplicationController
     redirect_to root_path
   end
 
+  def oneday
+    set_date
+    @reservations = Reservation.where(day: params[:id])
+  end
 
   private
 
   def  reservation_parameter
     params.require(:reservation).permit(:day, :time, :end_time, :group_name, :manager, :phone_number, :people_number, :room_id, :use, :start_time).merge(user_id: current_user.id)
+  end
+
+  def start_time_set
+    @day = @reservation.day.strftime("%Y/%m/%d")
+    @time = @reservation.time.strftime("%H:%M")
+    @reservation.start_time = Time.zone.parse(@day + " " + @time)
+  end
+
+
+  def set_date
+    date = params[:id]
+    @date = date.to_date
+    @braketime = "13:59"
+    @brake = Time.zone.parse(date + " " + @braketime)
   end
 
 end

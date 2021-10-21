@@ -1,8 +1,10 @@
-/* リセットCSS */
+
 
 * {
   box-sizing: border-box;
 }
+
+
 body {
   background-color: #f5f5f3;
   margin: 0;
@@ -50,19 +52,7 @@ li {
   font-size: 40px
 }
 
-.col-1{
-  display: inline-block;
-  width: 200px;
-  margin-top: 5px;
-  white-space: nowrap;
-  font-size: 20px;
-}
 
-.col-2{
-  display: inline-block;
-  width: 300px;
-  margin-top: 5px;
-}
 
 .table-style{
   text-align: center;
@@ -86,7 +76,12 @@ footer p {
   font-size: 20px;
 }
 .new-reserv-text{
-text-align: center;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+  font-size: 20px;
+
+
 }
 
 .box17{
@@ -192,4 +187,28 @@ text-align: center;
 
 .delete-btn{
   color: black;
+}
+
+.day-tables{
+  display: flex;
+}
+
+.day-table{
+  width: 70%;
+  margin: auto;
+  align-items: baseline;
+}
+
+.day-table th{
+  width: 10%;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  text-align: center;
+}
+.day-table td{
+  width: 30%;
+  padding : 20px;
+  border: 1px dotted;
+  background-color: rgb(245, 242, 239); 
 }

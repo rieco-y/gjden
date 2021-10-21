@@ -13,9 +13,7 @@
           <div class="box17">
             <% @new_reservations.each do |reservation| %>
               <div class="new-reserv-text">
-                <span class="col-1"><%= link_to reservation.group_name, reservation %></span>
-                <span class="col-2"><%= reservation.day.strftime("%Y年%m月%d日") %><%#= link_to "詳細", blog_path(reservation)%></span>
-                <span class="col-3"><%= reservation.time.strftime("%H:%M〜") %><%#= link_to "詳細", blog_path(reservation)%></span>
+                <%= link_to "#{reservation.group_name}  様   #{reservation.day.strftime("%m月%d日")}  #{reservation.time.strftime("%H:%M〜")} ", reservation %>
               </div>
             <% end %>
           </div>
@@ -25,15 +23,19 @@
 
       <div class='calender-table-style'>
         <%= month_calendar events: @reservations do |date, reservations| %>
-          <%= date.day %>
+          <div class="text text03">
+              <%= link_to oneday_reservation_path(date), class: "btn" do %>
+                  <%= date.day %>
 
-          <% @reservations.each do |reservation| %>
-            <div>
-              <% if date == reservation.day %>
-                <%= link_to reservation.group_name, reservation %>
+                <% @reservations.each do |reservation| %>
+                  <div>
+                    <% if date == reservation.day %>
+                      <%= reservation.group_name %>
+                    <% end %>
+                  </div>
+                <% end %>
               <% end %>
-            </div>
-          <% end %>
+          </div>
         <% end %>
       </div>
     </div>
