@@ -60,6 +60,9 @@ class ReservationsController < ApplicationController
       @day = @reservation.day.strftime("%Y/%m/%d")
       @time = @reservation.time.strftime("%H:%M")
       @reservation.start_time = Time.zone.parse(@day + " " + @time)
+      @end_time = @reservation.end_time + 1.hours
+      @end_time = @end_time.strftime("%H:%M")
+      @reservation.finish_time = Time.zone.parse(@day + " " + @end_time)
     end
   end
 
