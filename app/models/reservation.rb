@@ -14,7 +14,7 @@ class Reservation < ApplicationRecord
     validates :people_number, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 200, message: 'は1〜200人以内で入力してください' }, format: { with: /\A[0-9]+\z/ }
     validates :use
   end
-  
+
   validate :day_check
   validate :end_time_check
 
@@ -22,16 +22,16 @@ class Reservation < ApplicationRecord
 
 
 def day_check
-  if self.day > Date.current
-    errors.add(:day, "の日付を正しく入力してください")
-  end
+    errors.add(:day, "の日付を正しく入力してください") if self.day < Date.current
 end
-
 
 def end_time_check
   if self.end_time < self.time
-    errors.add(:day, "を正しく入力してください")
+    errors.add(:end_time, "を正しく入力してください")
   end
+end
+
+def room_check
 end
 
 
