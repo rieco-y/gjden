@@ -16,8 +16,9 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_parameter)
+    @reservation.valid?
     start_time_set
-    if @reservation.save
+    if @reservation.save(context: :check)
       redirect_to root_path
     else
       render :new
@@ -55,9 +56,14 @@ class ReservationsController < ApplicationController
   end
 
   def start_time_set
-    @day = @reservation.day.strftime("%Y/%m/%d")
-    @time = @reservation.time.strftime("%H:%M")
-    @reservation.start_time = Time.zone.parse(@day + " " + @time)
+    if @reservation.valid?
+      @day = @reservation.day.strftime("%Y/%m/%d")
+      @time = @reservation.time.strftime("%H:%M")
+      @reservation.start_time = Time.zone.parse(@day + " " + @time)
+      @end_time = @reservation.end_time + 1.hours
+      @end_time = @end_time.strftime("%H:%M")
+      @reservation.finish_time = Time.zone.parse(@day + " " + @end_time)
+    end
   end
 
 

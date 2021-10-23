@@ -12,6 +12,7 @@ class CreateReservations < ActiveRecord::Migration[6.0]
       t.string :use, null: false
       t.integer :user_id
       t.datetime :start_time
+      t.datetime :finish_time
       t.timestamps
     end
   end
