@@ -9,7 +9,7 @@
       <table class="detail-table">
         <tr>
           <th class="detail-reservation">日時</th>
-          <td class="detail-value"><%= @reservation.day.strftime("%m月%d日　") %><%= @reservation.time.strftime("　%H:%M〜") %></td>
+          <td class="detail-value"><%= @reservation.day.strftime("%m月%d日　") %><%= @reservation.time.strftime("　%H:%M　〜") %><%= @reservation.end_time.strftime("　%H:%M") %></td>
         </tr>
         <tr>
           <th class="detail-reservation">人数</th>

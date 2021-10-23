@@ -20,7 +20,7 @@
           <% @reservations.each do |reservation| %>
             <% if reservation.start_time <= @brake %>
               <tr>
-                <th><%= reservation.room.name %></th><td><%= link_to reservation.group_name, reservation %></td><td><%= reservation.time.strftime("%H:%M〜") %></td><td><%= reservation.use %></td>
+                <th><%= reservation.room.name %></th><td><%= link_to reservation.group_name, reservation %></td><td><%= reservation.time.strftime("%H:%M〜") %><%= reservation.end_time.strftime("%H:%M") %></td><td><%= reservation.use %></td>
               </tr>
             <% end %>
           <% end %>
@@ -36,7 +36,7 @@
           <% @reservations.each do |reservation| %>
             <% if reservation.start_time > @brake %>
                 <tr>
-                  <th><%= reservation.room.name %></th><td><%= link_to reservation.group_name, reservation %></td><td><%= reservation.time.strftime("%H:%M〜") %></td><td><%= reservation.use %></td>
+                  <th><%= reservation.room.name %></th><td><%= link_to reservation.group_name, reservation %></td><td><%= reservation.time.strftime("%H:%M〜") %><%= reservation.end_time.strftime("%H:%M") %></td><td><%= reservation.use %></td>
                 </tr>
             <% end %>
           <% end %>
