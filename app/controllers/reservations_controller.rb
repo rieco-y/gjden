@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_parameter)
     @reservation.valid?
     start_time_set
-    if @reservation.save
+    if @reservation.save(context: :check)
       redirect_to root_path
     else
       render :new
