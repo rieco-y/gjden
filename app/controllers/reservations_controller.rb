@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @reservation = Reservation.new
+    @reservation = Reservation.new(day: params[:format])
   end
 
   def show
@@ -48,6 +48,7 @@ class ReservationsController < ApplicationController
     set_date
     @reservations = Reservation.where(day: params[:id])
   end
+
 
   private
 
