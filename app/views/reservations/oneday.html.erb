@@ -4,8 +4,8 @@
 <%= render "/layouts/header" %>
     <div class="col-12 text-center title">
       <h1><%= @date.strftime("%Y年%m月%d日") %></h1>
+      <h3><%= link_to 'この日に予約を入れる', new_reservation_path(@date), class: 'shadow p-3 btn btn-outline-dark btn-lg' %></h3>
     </div>
-
     <br>
   
   <div class="day-tables">
