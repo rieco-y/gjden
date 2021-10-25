@@ -1,4 +1,4 @@
-# テーブル設計
+# README
 
 ## users テーブル
 
@@ -13,16 +13,19 @@
 
 ## reservations テーブル
 
-| Column        | Type    | Options                        |
-| ------------- | ------- | ------------------------------ |
-| day           | date    | null: false                    |
-| start_time    | time    | null: false                    |
-| end_time      | time    | null: false                    |
-| group_name    | string  | null: false                    |
-| manager       | string  | null: false                    |
-| phone_number  | string  | null: false                    |
-| people_number | integer | null: false                    |
-| room_id       | integer | null: false                    |
-| use           | string  | null: false                    |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| day           | date       | null: false                    |
+| time          | time       | null: false                    |
+| end_time      | time       | null: false                    |
+| group_name    | string     | null: false                    |
+| manager       | string     | null: false                    |
+| phone_number  | string     | null: false                    |
+| people_number | integer    | null: false                    |
+| room_id       | integer    | null: false                    |
+| use           | string     | null: false                    |
+| user          | references | foreign_key: true              |
+| start_time    | string     |                                |
+| finish_time   | string     |                                |
 
 - belogs_to: user
