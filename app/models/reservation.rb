@@ -16,7 +16,7 @@ class Reservation < ApplicationRecord
   end
 
   validate :day_check
-  validate :end_time_check
+  validate :end_time_check, if: -> { validation_context == :check }
   validate :room_check, if: -> { validation_context == :check }
 
   validates :room_id, numericality: { other_than: 1 , message: "を選択してください"} 
@@ -28,9 +28,8 @@ def day_check
 end
 
 def end_time_check
-  if self.end_time < self.time
-    errors.add(:end_time, "を正しく入力してください")
-  end
+  return if self.end_time.blank?
+    errors.add(:end_time, "を正しく入力してください") if self.end_time < self.time
 end
 
 def room_check
@@ -40,7 +39,7 @@ def room_check
         .where('finish_time > ?', self.start_time)
         .where('start_time < ?', self.finish_time)
         .where.not(id: id).exists?
-        errors.add(:base, "予約が重複しています") 
+        errors.add(:base, "の予約が重複しています") 
       end
 end
 end

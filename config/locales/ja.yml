@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      reservation: 予約
+    attributes:
+      reservation:
+        day: 日付
+        time: 開始時間
+        end_time: 終了時間
+        group_name: 団体名
+        manager: 担当者
+        phone_number: 電話番号
+        people_number: 人数
+        room_id: 会場
+        use: 用途

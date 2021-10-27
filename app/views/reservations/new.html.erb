@@ -30,13 +30,13 @@
         <div class="time-form-group">
           <%= form.label :time, '開始時間' %>
         <div class='input-date-wrap'>
-          <%= form.time_select(:time, {class:'select-date', id:"start-time", prompt:'--', time_separator: ':'}, ignore_data: true) %>
+          <%= form.time_select(:time, {class:'select-date', id:"start-time", prompt:'--', time_separator: ':', ignore_date: true}) %>
         </div>
         </div>
         <div class="time-form-group">
           <%= form.label :end_time, '終了時間' %>
         <div class='input-date-wrap'>
-          <%= form.time_select(:end_time, {class:'select-date', id:"end-time", prompt:'--', time_separator: ':'}, ignore_data: true) %>
+          <%= form.time_select(:end_time, {class:'select-date', id:"end-time", prompt:'--', time_separator: ':', ignore_date: true}) %>
         </div>
         </div>
       </div>
