@@ -29,16 +29,25 @@
         </div>
         <div class="time-form-group">
           <%= form.label :time, '開始時間' %>
-        <div class='input-date-wrap'>
-          <%= form.time_select(:time, {class:'select-date', id:"start-time", prompt:'--', time_separator: ':', ignore_date: true}) %>
-        </div>
+          <div class='input-date-wrap'>
+            <%= form.time_select(:time, {class:'select-date', id:"start-time", prompt:'--', time_separator: ':', ignore_date: true}) %>
+          </div>
         </div>
         <div class="time-form-group">
           <%= form.label :end_time, '終了時間' %>
-        <div class='input-date-wrap'>
-          <%= form.time_select(:end_time, {class:'select-date', id:"end-time", prompt:'--', time_separator: ':', ignore_date: true}) %>
+          <div class='input-date-wrap'>
+            <%= form.time_select(:end_time, {class:'select-date', id:"end-time", prompt:'--', time_separator: ':', ignore_date: true}) %>
+          </div>
         </div>
+
+        <div class="time-form-group">
+          <%= form.label :room_id, '会場' %>
+          <div class='input-room-wrap'>
+            <%= form.collection_select(:room_id, Room.all, :id, :name, {}, {class:"room-select"}) %>
+          </div>
         </div>
+
+
       </div>
       <div class="group form-group">
         <%= form.label :group_name, '団体名' %>
@@ -60,10 +69,6 @@
         <%= form.text_field :people_number, class: 'form-control' %>
       </div>
 
-      <div class="room form-group">
-        <%= form.label :room_id, '会場' %>
-        <%= form.collection_select(:room_id, Room.all, :id, :name, {}, {class:"room-select"}) %>
-      </div>
 
       <div class="use form-group">
         <%= form.label :use, '用途' %>
