@@ -9,10 +9,10 @@ class Reservation < ApplicationRecord
     validates :time
     validates :end_time
     validates :group_name
-    validates :manager
-    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'は半角数字で入力してください' }
-    validates :people_number, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 200, message: 'は1〜200人以内で入力してください' }, format: { with: /\A[0-9]+\z/ }
-    validates :use
+    validates :manager, on: :update
+    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'は半角数字で入力してください' }, on: :update
+    validates :people_number, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 200, message: 'は1〜200人以内で入力してください' }, format: { with: /\A[0-9]+\z/ },  on: :update
+    validates :use, on: :update
   end
 
   validate :day_check
