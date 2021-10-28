@@ -5,11 +5,11 @@ class CreateReservations < ActiveRecord::Migration[6.0]
       t.time :time, null: false
       t.time :end_time, null: false
       t.string :group_name, null: false
-      t.string :manager, null: false
-      t.string :phone_number, null: false
-      t.integer :people_number, null: false
+      t.string :manager
+      t.string :phone_number
+      t.integer :people_number
       t.integer :room_id, null: false
-      t.string :use, null: false
+      t.string :use
       t.integer :user_id
       t.datetime :start_time
       t.datetime :finish_time

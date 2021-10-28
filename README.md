@@ -19,11 +19,11 @@
 | time          | time       | null: false                    |
 | end_time      | time       | null: false                    |
 | group_name    | string     | null: false                    |
-| manager       | string     | null: false                    |
-| phone_number  | string     | null: false                    |
-| people_number | integer    | null: false                    |
+| manager       | string     |                                |
+| phone_number  | string     |                                |
+| people_number | integer    |                                |
 | room_id       | integer    | null: false                    |
-| use           | string     | null: false                    |
+| use           | string     |                                |
 | user          | references | foreign_key: true              |
 | start_time    | string     |                                |
 | finish_time   | string     |                                |
