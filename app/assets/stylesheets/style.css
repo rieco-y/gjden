@@ -218,9 +218,25 @@ footer p {
 .time-form-group{
   padding-left: 40px;
 }
+.timezone-group{
+  display: flex;
+}
 .time-zone-select{
   background-color: #FF6666 ;
   color:black;
-  padding: 5px 10px;
+  padding: 10px 35px;
   text-align: center;
+}
+.show-lists{
+  width: 150px;
+  background-color: #ffffff;
+  display: flex;
+  padding-left: 0rem ;
+}
+.hidden{
+  display: none;
+}
+.pull-down-list{
+  padding: 10px 16px;
+  border: 1px solid #eee;
 }

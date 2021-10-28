@@ -1,3 +1,4 @@
+  <script src="new.js"></script>
   <div class="top-heading">
     <%= image_tag "logo白.png", class:"top-logo-pict" %>
   </div>
@@ -30,28 +31,31 @@
         <div class="time-form-group">
           <%= form.label :time, '開始時間' %>
           <div class='input-date-wrap'>
-            <%= form.time_select(:time, {class:'select-date', id:"start-time", prompt:'--', time_separator: ':', ignore_date: true}) %>
+            <%= form.time_select(:time, {class:'select-date1', id:"start-time", prompt:'--', time_separator: ':', ignore_date: true}) %>
           </div>
         </div>
         <div class="time-form-group">
           <%= form.label :end_time, '終了時間' %>
           <div class='input-date-wrap'>
-            <%= form.time_select(:end_time, {class:'select-date', id:"end-time", prompt:'--', time_separator: ':', ignore_date: true}) %>
+            <%= form.time_select(:end_time, {class:'select-date2', id:"end-time", prompt:'--', time_separator: ':', ignore_date: true}) %>
           </div>
         </div>
 
         <div class="time-form-group">
           <%= form.label :room_id, '会場' %>
           <div class='input-room-wrap'>
-            <%= form.collection_select(:room_id, Room.all, :id, :name, {}, {class:"room-select"}) %>
+            <%= form.collection_select(:room_id, Room.all, :id, :name, {}, {class:"room-select", id:"select-room"}) %>
           </div>
         </div>
-        <div class="time-form-group">
-          時間指定
-          <div class='time-zone-select'>
-            <%= "昼" %>
-          </div>
-        </div>
+        <ul class="time-form-group">
+          　　　　
+          <li class='time-zone-select' id="lists">時間帯指定</li>
+            <ul class="show-lists hidden" id="pull-down">
+              <li class="pull-down-list" id="morning">朝</li>
+              <li class="pull-down-list" id="lunch">昼</li>
+              <li class="pull-down-list" id="dinner">夜</li>
+            </ul>
+        </ul>
 
       </div>
 
