@@ -46,9 +46,15 @@
             <%= form.collection_select(:room_id, Room.all, :id, :name, {}, {class:"room-select"}) %>
           </div>
         </div>
-
+        <div class="time-form-group">
+          時間指定
+          <div class='time-zone-select'>
+            <%= "昼" %>
+          </div>
+        </div>
 
       </div>
+
       <div class="group form-group">
         <%= form.label :group_name, '団体名' %>
         <%= form.text_field :group_name, class: 'form-control' %>

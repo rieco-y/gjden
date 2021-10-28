@@ -218,3 +218,9 @@ footer p {
 .time-form-group{
   padding-left: 40px;
 }
+.time-zone-select{
+  background-color: #FF6666 ;
+  color:black;
+  padding: 5px 10px;
+  text-align: center;
+}
