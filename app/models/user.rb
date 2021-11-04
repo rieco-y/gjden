@@ -14,5 +14,7 @@ class User < ApplicationRecord
   validates_format_of :password, with: PASSWORD_REGEX, message: 'は英字と数字の両方を含めて設定してください'
 
   has_many :reservations
+  has_many :looks, dependent: :destroy
+  has_many :looked_reservations, through: :looks, source: :reservation
 end
 

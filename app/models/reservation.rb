@@ -3,6 +3,8 @@ class Reservation < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :room
   belongs_to :user
+  has_many :looks
+  has_many :looked_users, through: :looks, source: :user
 
   with_options presence: true do
     validates :day
