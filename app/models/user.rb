@@ -16,5 +16,8 @@ class User < ApplicationRecord
   has_many :reservations
   has_many :looks, dependent: :destroy
   has_many :looked_reservations, through: :looks, source: :reservation
+  def already_looked?(reservation)
+    self.looks.exists?(reservation_id: reservation.id)
+  end
 end
 
