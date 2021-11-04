@@ -12,6 +12,7 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
+    @look = Look.new
   end
 
   def create
