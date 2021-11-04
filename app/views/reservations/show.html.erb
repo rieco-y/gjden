@@ -32,6 +32,20 @@
           <td class="detail-value"><%=@reservation.phone_number%></td>
         </tr>
       </table>
+      <br>
+      <div class="look-list-btn">
+        <% if current_user.already_looked?(@reservation) %>
+          <%= button_to '確認を取り消す', reservation_look_path(@reservation), method: :delete, class: 'btn btn-outline-secondary' %>
+        <% else %>
+          <%= button_to '確認しました', reservation_looks_path(@reservation), class: 'btn btn-outline-secondary' %>
+        <% end %>
+        <h4>確認済の社員</h4>
+        <% @reservation.looked_users.each do |user| %>
+          <%= user.last_name %>　
+        <% end %>
+      </div>
+
+
       <div class="detail-btn">
         <button type="button" class="btn">
           <%= link_to "#{@reservation.day.strftime("%m月%d日")}一覧に戻る", oneday_reservation_path(@reservation.day), class: 'btn btn-outline-secondary' %>
