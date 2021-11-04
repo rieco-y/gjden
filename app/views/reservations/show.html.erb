@@ -33,8 +33,9 @@
         </tr>
       </table>
       <br>
-      <%= render "/looks/looks" %>
-
+      <div id="look_buttons_<%= @reservation.id %>">
+        <%= render "/looks/looks" %>
+      </div>
 
       <div class="detail-btn">
         <button type="button" class="btn">

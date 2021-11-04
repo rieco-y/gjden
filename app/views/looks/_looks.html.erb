@@ -1,8 +1,8 @@
       <div class="look-list-btn">
         <% if current_user.already_looked?(@reservation) %>
-          <%= button_to '確認を取り消す', reservation_look_path(@reservation), method: :delete, remote: true, class: 'btn btn-outline-secondary' %>
+          <%= button_to '確認を取り消す', reservation_look_path(@reservation), method: :delete, class: 'btn btn-outline-secondary' %>
         <% else %>
-          <%= button_to '確認しました', reservation_looks_path(@reservation), remote: true, class: 'btn btn-outline-secondary' %>
+          <%= button_to '確認しました', reservation_looks_path(@reservation), class: 'btn btn-outline-secondary' %>
         <% end %>
         <h4>確認済の社員</h4>
         <% @reservation.looked_users.each do |user| %>
