@@ -20,7 +20,6 @@ class ReservationsController < ApplicationController
     @reservation.valid?
     start_time_set
     if @reservation.save(context: :check)
-      redirect_to root_path
     else
       render :new
     end
@@ -33,7 +32,6 @@ class ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
     if @reservation.update(reservation_parameter)
-      redirect_to root_path
     else
       render :edit
     end
@@ -42,7 +40,6 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.delete
-    redirect_to root_path
   end
 
   def oneday
