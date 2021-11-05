@@ -12,9 +12,12 @@
           <span class="new-reserv-voyce">＼  新規予約入っています ご確認ください ! ／</span>
           <div class="box17">
             <% @new_reservations.each do |reservation| %>
-              <div class="new-reserv-text">
-                <%= link_to "#{reservation.group_name}  様   #{reservation.day.strftime("%m月%d日")}  #{reservation.time.strftime("%H:%M〜")} ", reservation %>
-              </div>
+              <% if current_user.already_looked?(reservation) %>
+              <% else %>
+                <div class="new-reserv-text">
+                  <%= link_to "#{reservation.group_name}  様   #{reservation.day.strftime("%m月%d日")}  #{reservation.time.strftime("%H:%M〜")} ", reservation %>
+                </div>
+              <% end %>
             <% end %>
           </div>
       </div>
