@@ -80,8 +80,6 @@ footer p {
   display: block;
   margin-top: 5px;
   font-size: 20px;
-
-
 }
 
 .box17{
@@ -242,5 +240,9 @@ footer p {
 }
 
 .look-list-btn{
+  text-align: center;
+}
+
+.create-result{
   text-align: center;
 }

@@ -1,7 +1,7 @@
     <header>
           <ul class="navbar">
                 <li><%= link_to '　ト　ッ　プ　　ペ　ー　ジ　', root_path, class: 'shadow p-3 btn btn-outline-dark btn-lg' %></li>
-                <li><%= link_to '　　新　　規　　予　　約　　', new_reservation_path, class: 'shadow p-3 btn btn-outline-dark btn-lg' %></li>
+                <li><%= link_to '　　新　　規　　予　　約　　', new_reservation_path, data: {"turbolinks" => false}, class: 'shadow p-3 btn btn-outline-dark btn-lg' %></li>
                 <li><%= link_to ' あ　な　た　の　ペ　ー　ジ ', edit_user_path(current_user), class: 'shadow p-3 btn btn-outline-dark btn-lg' %></li>
           </ul>
     </header>
