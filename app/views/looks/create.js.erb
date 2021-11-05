@@ -1,3 +1,1 @@
-console.log("create.js.erbファイルが呼び出されました！");
-
-('#look_buttons_<%= @reservation.id %>').html("<%= j(render "/looks/looks") %>");
+document.getElementById('look-buttons<%= @reservation.id %>').innerHTML = "<%= j(render "/looks/looks") %>";

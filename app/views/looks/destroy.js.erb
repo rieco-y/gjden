@@ -1,1 +1,1 @@
-$('#looks_buttons_<%= @reservation.id %>').html("<%= j(render "/looks/looks", reservation: @reservation) %>");
+document.getElementById('look-buttons<%= @reservation.id %>').innerHTML = "<%= j(render "/looks/looks") %>";
