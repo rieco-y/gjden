@@ -32,6 +32,11 @@
           <td class="detail-value"><%=@reservation.phone_number%></td>
         </tr>
       </table>
+      <br>
+      <div id="look-buttons<%= @reservation.id %>">
+        <%= render "/looks/looks", reservation: @reservation %>
+      </div>
+
       <div class="detail-btn">
         <button type="button" class="btn">
           <%= link_to "#{@reservation.day.strftime("%m月%d日")}一覧に戻る", oneday_reservation_path(@reservation.day), class: 'btn btn-outline-secondary' %>

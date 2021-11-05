@@ -9,7 +9,8 @@
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
 
-- has_many: reservation
+- has_many: reservations
+- has_many: looks
 
 ## reservations テーブル
 
@@ -28,4 +29,15 @@
 | start_time    | string     |                                |
 | finish_time   | string     |                                |
 
-- belogs_to: user
+- belongs_to: user
+- has_many: looks
+
+## looks テーブル
+
+| Column      | Type        | Options                        |
+| ----------- | ----------- | ------------------------------ |
+| user        | references  | null: false, foreign_key: true |
+| reservation | references  | null: false, foreign_key: true |
+
+- belongs_to: user
+- belongs_to: reservation

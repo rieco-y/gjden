@@ -3,6 +3,8 @@ class Reservation < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :room
   belongs_to :user
+  has_many :looks
+  has_many :looked_users, through: :looks, source: :user
 
   with_options presence: true do
     validates :day
@@ -39,7 +41,7 @@ def room_check
         .where('finish_time > ?', self.start_time)
         .where('start_time < ?', self.finish_time)
         .where.not(id: id).exists?
-        errors.add(:base, "の予約が重複しています") 
+        errors.add(:base, "予約が重複しています") 
       end
 end
 end
