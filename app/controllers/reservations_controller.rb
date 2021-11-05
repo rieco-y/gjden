@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
     @reservation = Reservation.all.where(day: Date.current)
-    @new_reservations = Reservation.order(updated_at: :desc).limit(3)
+    @new_reservations = Reservation.order(updated_at: :desc)
   end
 
   def new
