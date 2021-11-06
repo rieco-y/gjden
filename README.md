@@ -18,9 +18,10 @@
 https://gjden1111.herokuapp.com/ <br>
 ID：admin　PASS：2525<br>
 <br>
-社員ユーザー1<br>
-メールアドレス：sasaki@test <br>
-パスワード：111aaa <br>
+ー社員ユーザー1ーーーーーーーーーーーー<br>
+｜メールアドレス：sasaki@test 　　　　　　　　　　　　　　｜<br>
+｜パスワード：111aaa 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　｜<br>
+ーーーーーーーーーーーーーーーーーーーーー<br>
 <br>
 社員ユーザー2<br>
 メールアドレス：suzukii@test <br>
