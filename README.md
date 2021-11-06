@@ -15,8 +15,10 @@
 ④外出先でも確認が可能<br>
 <br>
 # ＜ Production environment--本番環境 ＞
+ーURLーーーーーーーーーーーーーーーーーー<br>
 https://gjden1111.herokuapp.com/ <br>
 ID：admin　PASS：2525<br>
+ーーーーーーーーーーーーーーーーーーーーー<br>
 <br>
 ー社員ユーザー１ーーーーーーーーーーーー<br>
 　　メールアドレス：sasaki@test<br>
