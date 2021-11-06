@@ -19,13 +19,14 @@ https://gjden1111.herokuapp.com/ <br>
 ID：admin　PASS：2525<br>
 <br>
 ー社員ユーザー1ーーーーーーーーーーーー<br>
-｜メールアドレス：sasaki@test 　　　　　　　　　　　　　　｜<br>
-｜パスワード：111aaa 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　｜<br>
-ーーーーーーーーーーーーーーーーーーーーー<br>
+　　メールアドレス：sasaki@test<br>
+ パスワード：111aaa<br>
+ーーーーーーーーーーーーーーーーーーーー<br>
 <br>
-社員ユーザー2<br>
+ー社員ユーザー2ーーーーーーーーーーーー<br>
 メールアドレス：suzukii@test <br>
 パスワード：aaa111 <br>
+ーーーーーーーーーーーーーーーーーーーー<br>
 <br>
 # ＜ Project justification--制作背景 ＞
 【紙媒体での予約管理の不便さを解決したい】<br>
