@@ -35,12 +35,12 @@ ID：admin　PASS：2525<br>
 
 
 ## ＜ Top page--トップページ ＞
-【point1】<br>
+<span style="color: red">【point1】</span><br>
 予約の確認漏れを防ぐため、未確認の伝票はこちらに全て表示されます。<br>
 ![上](上ポイント.jpeg)<br>
 ![下](２４日をクリック.jpeg)<br>
 ![日毎](２４日ページ.jpeg)<br>
-【point2】<br>
+<span style="color: red">【point2】</span><br>
 見たい日がすぐ見つかるようにカレンダー形式を採用しました。<br>
 更に、日毎のページは昼と夜で分けて表示しています。<br>
 
