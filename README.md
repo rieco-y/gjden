@@ -35,7 +35,7 @@ ID：admin　PASS：2525<br>
 
 
 ## ＜ Toppage--トップページ ＞
-![上](トップ上.png)<br>
+![上](上ポイント.jpeg)<br>
 ![下](トップ下.png)<br>
 
 ## users テーブル
