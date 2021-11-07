@@ -73,7 +73,7 @@ PASS：2525<br>
 # ＜ Development Environment--開発環境 ＞
 -Ruby on Rails<br>
 <br>
--BootStrap<br>
+-Boot Strap<br>
 <br>
 -Simple Calendar<br>
 <br>
