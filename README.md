@@ -101,6 +101,9 @@ PASS：2525<br>
 このアプリのデータベースにある個人名・団体名・電話番号・メールアドレスなどは全て架空のものです。<br>
 <br>
 # ＜ Design DB--DB設計 ＞
+## ER図
+![ER図](ER図.png)<br>
+
 ## users テーブル
 
 | Column             | Type   | Options                   |
